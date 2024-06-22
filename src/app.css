@@ -1,8 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Cypro+Minoan&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 button {
-    @apply bg-[#d6dcef]  rounded-full h-14 w-14 p-2 text-2xl 
-    shadow-md;
+    @apply bg-[#d6dcef] hover:bg-[#d6dcef]/80 hover:scale-95 transition-all text-slate-600  rounded-full h-14 w-14 p-2 text-2xl 
+    shadow-md flex justify-center items-center;
+}
+
+body{
+    font-family: "Noto Sans Cypro Minoan", sans-serif;
+
 }

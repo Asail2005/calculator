@@ -23,7 +23,6 @@ equation = equation.substring(0, equation.length -1);
   }
 }
 
-
 function clear(){
   equation = "";
 }

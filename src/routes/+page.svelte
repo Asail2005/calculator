@@ -4,6 +4,7 @@
   import Division from "$lib/icons/division.svelte";
   import Multiplication from "$lib/icons/multiplication.svelte";
   import Add from "$lib/icons/add.svelte";
+  import Exponent from "$lib/icons/exponent.svelte";
 
 function addTOEquation(value : string){
   equation +=value;
@@ -28,7 +29,11 @@ function clear(){
 }
 
 function solve(){
-  equation = eval(equation);
+  try{
+    equation = eval(equation);
+  } catch(error){
+    alert("المعادلة غير صالحة")
+  }
 }
 
 function calculateSquareRoot() {
@@ -57,7 +62,9 @@ function calculateSquareRoot() {
   font-semibold break-all">
 {equation}
 </div>
-  <button on:click={() => addTOEquation(" /100")} class="  bg-[#f3f6fc] hover:bg-[#f3f6fc]/50 ">%</button>
+  <button on:click={() => addTOEquation("**")} class="  bg-[#f3f6fc] hover:bg-[#f3f6fc]/50 text-3xl">
+    <Exponent/>
+  </button>
   <button on:click={() => calculateSquareRoot()} class="   bg-[#f3f6fc]  hover:bg-[#f3f6fc]/50 text-4xl">
     <SquareRoot /> 
   </button>
